@@ -1,0 +1,223 @@
+/* === GLOBAL === */
+body {
+  margin: 0;
+  font-family: "Poppins", Arial, sans-serif;
+  background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+  color: #333;
+  min-height: 100vh;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 0;
+}
+
+/* === HEADER === */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff8e1;
+  border-radius: 16px;
+  padding: 20px 30px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 25px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo h1 {
+  margin: 0;
+  font-weight: 700;
+  color: #ff7043;
+}
+
+.logo h1:nth-child(2) {
+  color: #333;
+}
+
+/* === CATEGORY BUTTONS === */
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0 30px;
+  justify-content: center;
+}
+
+.categories button {
+  border: 1px solid #ffcc80;
+  background: #fff;
+  color: #ff7043;
+  padding: 10px 18px;
+  border-radius: 25px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.categories button:hover {
+  background: #ffe0b2;
+  transform: translateY(-2px);
+}
+
+.categories button.active {
+  background: linear-gradient(135deg, #ff7043, #f4511e);
+  color: #fff;
+  border: none;
+  box-shadow: 0 3px 10px rgba(255, 112, 67, 0.4);
+}
+
+/* === SORT SELECT === */
+.categories select {
+  border: 1px solid #ccc;
+  font-size: 14px;
+  color: #333;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.categories select:hover {
+  border-color: #ff7043;
+}
+
+/* === PIZZA LIST === */
+h2 {
+  margin: 10px 0 20px;
+  text-align: center;
+  font-weight: 700;
+  color: #ff7043;
+}
+
+.pizza-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* === CART BUTTON === */
+.cart {
+  display: flex;
+  align-items: center;
+}
+
+.cart-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  background: linear-gradient(135deg, #ff7043, #f4511e);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 25px;
+  padding: 8px 15px;
+  cursor: pointer;
+  transition: 0.3s;
+  box-shadow: 0 3px 8px rgba(255, 112, 67, 0.4);
+}
+
+.cart-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #ff8a65, #ff7043);
+}
+
+/* === ADMIN LOGIN MODAL === */
+.admin-login {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+
+.admin-login-box {
+  background: #fff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+.admin-login-box h3 {
+  color: #ff7043;
+  margin-bottom: 15px;
+}
+
+.admin-login-box input {
+  width: 90%;
+  margin: 8px 0;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  outline: none;
+  transition: 0.3s;
+}
+
+.admin-login-box input:focus {
+  border-color: #ff7043;
+}
+
+.admin-login-box button {
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.admin-login-box button:first-child {
+  background: #43a047;
+  color: #fff;
+  margin-right: 10px;
+}
+
+.admin-login-box button:first-child:hover {
+  background: #388e3c;
+}
+
+.admin-login-box button:last-child {
+  background: #f44336;
+  color: #fff;
+}
+
+.admin-login-box button:last-child:hover {
+  background: #d32f2f;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .categories {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 8px;
+  }
+
+  .categories button {
+    flex-shrink: 0;
+  }
+
+  .pizza-list {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
